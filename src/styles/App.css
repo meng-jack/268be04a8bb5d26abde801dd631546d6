@@ -1,0 +1,26 @@
+@import url("./theme.css");
+
+@font-face {
+    font-family: "Monsterrat";
+    src: local("Monsterrat"),
+        url(../fonts/monsterrat/Montserrat-VariableFont_wght.ttf)
+            format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+.app-bar-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.app-bar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar-action-icon {
+    margin-left: 16px;
+    cursor: pointer; /* Indicate interactivity */
+}

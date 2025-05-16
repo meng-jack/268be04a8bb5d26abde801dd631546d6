@@ -1,0 +1,42 @@
+@import url("./theme.css");
+
+html,
+body {
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    background: var(--surface);
+    font-family: "Monsterrat";
+    font-size: 18px;
+    line-height: 1.5;
+    user-select: none;
+}
+
+/*
+specifies that the user should not be able to drag this element
+
+pointer-events: none
+^^^^
+this is used for firefox compatiblity as firefox as of writing does not support user-drag and
+*/
+.block-ptrs {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+a {
+    text-decoration-line: none;
+    color: var(--on-primary);
+}
+
+a:hover {
+    color: var(--on-primary);
+    text-decoration-line: none;
+}
+
+a:visited {
+    color: var(--on-primary);
+}

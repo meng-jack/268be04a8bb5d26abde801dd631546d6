@@ -1,0 +1,15 @@
+:root {
+    --on-primary: #e0e0e0;
+    --ripple: rgba(255, 255, 192, 0.75);
+    --primary: #003d76;
+    --primary-darker: #00264a;
+    --secondary: #fed700;
+    --secondary-darker: #c2a300;
+    --on-secondary: #0a0a0a;
+    --tertiary: #aaaaaa;
+    --on-tertiary: #cccccc;
+    --surface: #ffffff;
+    --surface-variant: #c2c2c2;
+    --shadow-main: rgba(0, 61, 118, 0.32);
+    --border-radius: 8px;
+}

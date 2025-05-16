@@ -1,0 +1,39 @@
+.text-container {
+  position: relative;
+  height: 60px;
+}
+
+.text-item {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.5s forwards var(--delay),
+             fadeOutSlideUp 0.5s forwards calc(var(--delay) + 1.5s);
+  left: 0;
+  right: 0;
+  text-align: center;
+  --delay: var(--data-delay);
+}
+
+.text-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px); 
+  }
+}
