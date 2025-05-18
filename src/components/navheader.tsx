@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { SizedBox, Spacer } from "./basics";
+import { SizedBox } from "./basics";
 import "../styles/theme.css";
 import { Button, Divider, Drawer, Flex } from "antd";
 import { Link } from "react-router-dom";
 import { Header } from "antd/es/layout/layout";
-import COLORS from "../shared/theme";
-import { sharedStrings, sharedValues } from "../shared/strings";
+import COLORS from "../shared/theme.ts";
+import strings from "../assets/strings.json";
 import {
     CloseOutlined,
     HomeOutlined,
@@ -14,7 +14,7 @@ import {
     QuestionOutlined,
     UserOutlined,
 } from "@ant-design/icons";
-import { isMd } from "../shared/responsive_queries";
+import { isMd } from "../shared/responsive_queries.ts";
 import { DisplayAtLeastMd, DisplayUntilMd } from "./responsive";
 
 function NavLink({ label, to, fontSize = "1.2em" }) {
@@ -40,10 +40,10 @@ function MenuItem({
     children: React.ReactNode;
 }>) {
     return (
-            <Flex vertical={false} gap="0.8em" align="center">
-                {icon}
-                {children}
-            </Flex>
+        <Flex vertical={false} gap="0.8em" align="center">
+            {icon}
+            {children}
+        </Flex>
     );
 }
 
@@ -54,43 +54,24 @@ function MiniHeader() {
     const [open, setOpen] = useState(false);
     return (
         <>
-            <Link
-                to="/"
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-            >
-                <img
-                    className=""
-                    itemProp="image"
-                    src={"/logo_horizontal.png"}
-                    alt="United Aline"
+            <Flex vertical={false} align="center" justify="center">
+                <LogoHorizontal />
+                <SizedBox width={"2.2vw"} />
+                <Button
+                    onClick={() => setOpen(true)}
                     style={{
-                        alignSelf: "center",
-                        colorRendering: "optimizeQuality",
-                        maxWidth: "80%",
-                        height: "100%",
+                        backgroundColor: COLORS.primary,
+                        color: COLORS.onPrimary,
+                        border: "none",
                     }}
-                />
-            </Link>
-            <SizedBox width={"12%"} />
-            <Button
-                onClick={() => setOpen(true)}
-                style={{
-                    backgroundColor: COLORS.primary,
-                    color: COLORS.onPrimary,
-                    border: "none",
-                    padding: "0.8em",
-                }}
-            >
-                <MenuOutlined
-                    style={{
-                        fontSize: "180%", // optical size?
-                    }}
-                />
-            </Button>
+                >
+                    <MenuOutlined
+                        style={{
+                            fontSize: "180%", // optical size?
+                        }}
+                    />
+                </Button>
+            </Flex>
             <Drawer
                 placement="bottom"
                 closable={true}
@@ -149,6 +130,22 @@ function MiniHeader() {
     );
 }
 
+export function LogoHorizontal() {
+    return <Link
+        to="/"
+        style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center" // makes sure the buttons and the image header are on the same axis line
+        }}
+    >
+        <img
+            itemProp="image"
+            src={"/logo_horizontal.png"}
+            alt="United Aline" />
+    </Link>;
+}
+
 export function NavHeader() {
     return (
         <Header
@@ -156,9 +153,6 @@ export function NavHeader() {
                 backgroundColor: COLORS.primary,
                 color: "white",
                 height: "56px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
                 paddingLeft: isMd() ? "12rem" : "1.2rem",
@@ -166,54 +160,28 @@ export function NavHeader() {
             }}
         >
             <DisplayAtLeastMd>
-                <Flex vertical={false}>
-                    <Link
-                        to="/"
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                        }}
-                    >
-                        <img
-                            className=""
-                            itemProp="image"
-                            src={"/logo_horizontal.png"}
-                            alt="United Aline"
-                            style={{
-                                colorRendering: "optimizeQuality",
-                                maxWidth: "100%",
-                                maxHeight: "100%",
-                            }}
-                        />
-                    </Link>
-                    <Spacer />
-                    <Flex
-                        vertical={false}
-                        justify="center"
-                        align="center"
-                        style={{
-                            color: COLORS.onPrimary,
-                            fontWeight: "600",
-                            fontSize: "1.2em",
-                        }}
-                    >
-                        <PhoneOutlined style={{ paddingRight: "0.15em" }} />
-                        <a href={sharedValues.linkDefaultTelephoneNumber}>
-                            {sharedStrings.defaultTelephoneNumber}
-                        </a>
-                    </Flex>
-                    <div
-                        style={{
-                            paddingLeft: "1.2em",
-                            paddingRight: "1.2em",
-                        }}
-                    >
+                <Flex justify="space-between" align="center">
+                    <LogoHorizontal />
+                    <SizedBox width="20%" />
+                    <Flex gap="middle" flex="1">
+                        <Flex align="center">
+                            <PhoneOutlined style={{ paddingRight: "0.15em" }} />
+                            <a
+                                href={`tel: ${strings.canonical.telephoneNumber}`}
+                                style={{
+                                    color: COLORS.onPrimary,
+                                    fontWeight: "600",
+                                    fontSize: "1.2em",
+                                }}
+                            >
+                                {strings.canonical.telephoneNumber}
+                            </a>
+                        </Flex>
                         <Divider type="vertical" />
-                    </div>
-                    <Flex gap={"1.5rem"} vertical={false}>
-                        <NavLink to="/about" label="About" />
-                        <NavLink to="/login" label="Login" />
+                        <Flex gap="1.5rem">
+                            <NavLink to="/about" label="About" />
+                            <NavLink to="/login" label="Login" />
+                        </Flex>
                     </Flex>
                 </Flex>
             </DisplayAtLeastMd>

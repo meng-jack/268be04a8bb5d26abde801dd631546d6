@@ -2,16 +2,17 @@ import React from "react";
 import { PageLayout } from "../components/pagelayout";
 import { SizedBox } from "../components/basics";
 import { Flex } from "antd";
-import COLORS from "../shared/theme";
-import SequentialTextAnimation from "../components/textsequencer";
+import COLORS from "../shared/theme.ts";
 import { GetYourQuoteButtonLarge } from "../components/canonical/canonical";
 import { DisplayAtLeastMd, DisplayUntilMd } from "../components/responsive";
+import strings from "../assets/strings.json";
+import { AnimatedText } from '../components/animated/text_sequencer';
 
 // extracting a lot of code here which i believe to be the correct way to do it in react and not just
 // for semantics (borrowed flutter + compose refactoring)
 
 const LeftSide = () => (
-    <div id="home-left-bind" style={{ width: "78%" }}>
+    <div id="home-left-bind" style={{ width: "80%" }}>
         <div
             style={{
                 fontSize: "1.8em",
@@ -23,12 +24,13 @@ const LeftSide = () => (
             An International Insurance Brokerage Firm
         </div>
         <SizedBox height="0.4em" />
-        <SequentialTextAnimation />
-        <p>
-            With our many Commercial Insurance products, you can safeguard your
-            business and its properties. We set out to minimize the hassle and
-            risks so you can build up your company.
-        </p>
+        <AnimatedText texts={strings.pages.home.rollerStrings.default} />
+        <SizedBox height="6.8rem" />
+        <GetYourQuoteButtonLarge
+            height="2.2em"
+            fontSize="1.2em"
+        />
+
     </div>
 );
 
@@ -43,28 +45,37 @@ const RightSide = () => (
         justify="center"
         align="center"
         style={{
-            width: "56%",
+            width: "100%",
+            height: "100%",
+
         }}
     >
-        <GetYourQuoteButtonLarge />
+        <p>
+        </p>
     </Flex>
 );
 
 export function HomePage() {
     return (
-        <PageLayout title="United Aline">
+        <PageLayout title={strings.pages.home.title} native={true}>
             <DisplayAtLeastMd>
                 <Flex
                     vertical={false}
                     justify="space-betweem"
                     align="center"
                     style={{
-                        paddingTop: "7.4rem",
+                        paddingLeft: '12rem',
+                        paddingRight: "0rem",
+                        paddingTop: "3.4rem",
                     }}
                 >
-                    <LeftSide />
-                    <SizedBox width="4rem" />
-                    <RightSide />
+                    <div style={{ flex: 2 }}>
+                        <LeftSide />
+                    </div>
+                    <SizedBox width="1.2rem" />
+                    <div style={{ flex: 1, width: "40%", height: "20rem" }}>
+                        <RightSide />
+                    </div >
                 </Flex>
             </DisplayAtLeastMd>
             <DisplayUntilMd>
@@ -76,6 +87,8 @@ export function HomePage() {
                             color: COLORS.primary,
                             textAlign: "center",
                             fontWeight: "bold",
+                            paddingLeft: "2.5rem",
+                            paddingRight: "2.5rem"
                         }}
                     >
                         An International Insurance Brokerage Firm
@@ -86,13 +99,12 @@ export function HomePage() {
                             textAlign: "center",
                         }}
                     >
-                        We set out to minimize the hassle and risks so you can
-                        build up your company.
+                        <AnimatedText texts={strings.pages.home.rollerStrings.medium} />
                     </div>
                     <SizedBox height="2.2em" />
                     <GetYourQuoteButtonLarge />
                 </Flex>
             </DisplayUntilMd>
-        </PageLayout>
+        </PageLayout >
     );
 }

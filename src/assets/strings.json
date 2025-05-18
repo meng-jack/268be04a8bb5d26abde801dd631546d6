@@ -1,0 +1,49 @@
+{
+    "langKey": "en-US",
+    "pages": {
+        "home": {
+            "title": "United Aline",
+            "rollerStrings": {
+                "medium": [
+                    "United Aline's ensures its extensive expertise in Marine Insurance and Surety Bonds",
+                    "Our Personal Insurance products defend your home, car, boat, or other belongings from unexpected damages.",
+                    "We set out to minimize the hassle and risks so you can build up your company."
+                ],
+                "default": [
+                    "Starting as a Marine Hull Insurance company, United Aline's ensures its extensive expertise in Marine Insurance and Surety Bonds. To this day, they remain at the forefront of our company.",
+                    "United Aline provides a wide variety of insurance products, from Personal Insurance to Marine & Bond. We aim to make the process of obtaining insurance simple and easy.",
+                    "Our Personal Insurance products defend your home, car, boat, or other belongings from unexpected damages. Let us help you protect your lifestyle.",
+                    "With our many Commercial Insurance products, you can safeguard your business and its properties. We set out to minimize the hassle and risks so you can build up your company."
+                ]
+            }
+        },
+        "getquote": {
+            "title": "Get Your Quote | United Aline",
+            "stepsdisplay": {
+                "productsneeded": "Products Needed",
+                "zipcode": "Zip Code",
+                "yourbusiness": "Your Business",
+                "yourinformation": "Your Information",
+                "contactinformation": "Contact Information"
+            },
+            "steps": {
+                "productsneeded": {
+                    "title": "What products do you need?"
+                }
+            }
+        },
+        "about": {
+            "title": "About | United Aline",
+            "officelocations": "Office Locations",
+            "unitedalineheadoffice": "United Aline Head Office"
+        }
+    },
+    "canonical": {
+        "telephoneNumber": "1-888-345-1868"
+    },
+    "components": {
+        "getyourquotebutton": {
+            "displayText": "Get Your Quote"
+        }
+    }
+}

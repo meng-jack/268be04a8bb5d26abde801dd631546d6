@@ -2,15 +2,36 @@
 <html lang="en">
 
 <head>
+  <base href="/">
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/logo_small.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="United Aline is an independent insurance brokerage firm that has been providing insurance services for commercial and personal interests since 1997." />
+  <meta name="theme-color" content="#003d76">
   <title>United Aline</title>
+  <script async="" type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Organization",
+			"url": "https://www.unitedaline.com",
+			"logo": "https://www.unitedaline.com/images/logo-horizontal.png",
+			"contactPoint": [{
+				"@type": "ContactPoint",
+				"telephone": "+1-888-345-1868",
+				"contactType": "customer service",
+				"areaServed": "US",
+				"contactOption": "TollFree"
+			}]
+		}
+	</script>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <span itemscope="" itemtype="http://schema.org/LocalBusiness">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </span>
 </body>
 
 </html>

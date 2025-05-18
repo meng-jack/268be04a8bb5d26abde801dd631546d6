@@ -1,17 +1,17 @@
 import React from "react";
 import { PageLayout } from "../components/pagelayout";
 import { DocHeader3 } from "../components/basics";
-
+import strings from "../assets/strings.json";
 export function AboutPage() {
     return (
-        <PageLayout title="About | United Aline">
+        <PageLayout title={strings.pages.about.title} native={false}>
             <div
                 style={{
                     paddingTop: "5rem",
                 }}
             >
-                <DocHeader3>Office Locations</DocHeader3>
-                <strong>United Aline Head Office</strong>
+                <DocHeader3>{strings.pages.about.officelocations}</DocHeader3>
+                <strong>{strings.pages.about.unitedalineheadoffice}</strong>
             </div>
         </PageLayout>
     );

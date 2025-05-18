@@ -1,13 +1,16 @@
 import React, { ReactNode, useEffect } from "react";
 import { NavHeader } from "./navheader";
-import { isMd } from "../shared/responsive_queries";
+import { isMd } from "../shared/responsive_queries.ts";
 
-interface PageLayoutProps {
+// native specifies whether additional styling should be configured, by default it is supplied a value
+//
+// to use another styling (custom styling), set native to 'undefined'
+export function PageLayout({ title, header, native, children }: Readonly<{
     title: string;
+    header?: ReactNode,
+    native: boolean,
     children: ReactNode;
-}
-
-export function PageLayout({ title, children }: Readonly<PageLayoutProps>) {
+}>) {
     const ismd = isMd();
     useEffect(() => {
         document.title = title;
@@ -22,15 +25,20 @@ export function PageLayout({ title, children }: Readonly<PageLayoutProps>) {
                     minHeight: "100vh",
                 }}
             >
-                <NavHeader />
-                <div
-                    style={{
-                        paddingLeft: ismd ? "12rem" : "2.5rem",
-                        paddingRight: ismd ? "12rem" : "2.5rem",
-                    }}
-                >
+                {header !== undefined ? header : <NavHeader />}
+                {native
+                    ?
                     <main style={{ flexGrow: 1 }}>{children}</main>
-                </div>
+
+                    : <div
+                        style={{
+                            paddingLeft: ismd ? "12rem" : "2.5rem",
+                            paddingRight: ismd ? "12rem" : "2.5rem",
+                        }}
+                    >
+                        <main style={{ flexGrow: 1 }}>{children}</main>
+                    </div>
+                }
             </div>
         </span>
     );

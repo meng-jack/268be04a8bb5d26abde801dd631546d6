@@ -1,29 +1,37 @@
 import React from "react";
 import { SecondaryButton } from "../buttons";
-
+import { Logging } from '../../shared/logger.ts';
+import { useNavigate } from 'react-router-dom';
+import strings from "../../assets/strings.json";
 /**
  * @returns Quotes button Large, should be shown where it needs big prominence
  */
-const GetYourQuoteButtonLarge = () => (
-    <SecondaryButton
+const GetYourQuoteButtonLarge = ({ width, fontSize, height }: Readonly<{
+    width?: string; fontSize?: string; height?: string;
+}>) => {
+    const navigate = useNavigate();
+    return <SecondaryButton
         onClick={() => {
-            // TODO: redirect them here to the get a quote web page
+            Logging.fine("User request GET_QUOTE_AX");
+            navigate("/getquote");
         }}
         style={{
             paddingTop: "1.2rem",
             paddingBottom: "1.2rem",
             paddingLeft: "2rem",
             paddingRight: "2rem",
+            width: width,
+            height: height
         }}
     >
         <strong
             style={{
-                fontSize: "1.4em",
+                fontSize: fontSize ?? "1.4em",
             }}
         >
-            Get Your Quote
+            {strings.components.getyourquotebutton.displayText}
         </strong>
-    </SecondaryButton>
-);
+    </SecondaryButton >;
+};
 
 export { GetYourQuoteButtonLarge };

@@ -1,7 +1,5 @@
 import React from "react";
 
-const Spacer = () => <div style={{ flex: 1 }}></div>;
-
 const SizedBox = ({ width = "0px", height = "0px" }) => (
     <div style={{ width: width, height: height }}></div>
 );
@@ -48,4 +46,4 @@ const DocHeader3 = ({ children }: { children: React.ReactNode }) => (
     </h3>
 );
 
-export { Spacer, SizedBox, DocHeader1, DocHeader2, DocHeader3 };
+export { SizedBox, DocHeader1, DocHeader2, DocHeader3 };

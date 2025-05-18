@@ -1,0 +1,15 @@
+/*
+    styles for the "text_sequencer.tsx animated component
+*/
+
+.text-item {
+    position: absolute;
+    opacity: 0;
+    translate: 2em;
+    transition: opacity 0.85s ease-in-out, transform 0.5s ease;
+}
+
+.text-item.active {
+    opacity: 1;
+    transform: translateX(-2em);
+}

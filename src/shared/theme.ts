@@ -1,5 +1,5 @@
 const COLORS = {
-    onPrimary: "#e0e0e0",
+    onPrimary: "#fcfcfc",
     ripple: "rgba(255, 255, 192, 0.75)",
     primary: "#003d76",
     primaryDarker: "#00264a",
