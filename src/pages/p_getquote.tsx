@@ -1,5 +1,4 @@
 import React, { ReactNode, useState } from 'react';
-import { PageLayout } from '../components/pagelayout';
 import { Autocomplete, Button, Checkbox, Flex, Group, Modal, ScrollArea, Stack, Stepper, TextInput } from '@mantine/core';
 import strings from "../assets/strings.json";
 import { SizedBox } from '../components/basics';
@@ -220,6 +219,7 @@ const Pages: ReadonlyArray<FormPageItem> = [
 ];
 
 export function GetQuotePage(): ReactNode {
+    document.title = strings.pages.getquote.title;
     // short hand function
     function findPageIndex(key: string): number {
         return Pages.findIndex((element: FormPageItem) => element.key === key);
@@ -231,7 +231,7 @@ export function GetQuotePage(): ReactNode {
     // represents at what stage the user is currently on in the form
     // it is used by both the steps (from antd) and the pageview
     const [current, setCurrent] = useState(0);
-    return (<PageLayout title={strings.pages.getquote.title} native={true}>
+    return (
         <Flex direction="column" justify='center' align='center' className="pt-[2.2rem] px-[2rem]">
             <Stepper
                 active={current}
@@ -294,6 +294,5 @@ export function GetQuotePage(): ReactNode {
                     </p>
                 </Stack>
             }
-        </Flex>
-    </PageLayout >);
+        </Flex>);
 }

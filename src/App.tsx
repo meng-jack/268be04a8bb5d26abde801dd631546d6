@@ -7,6 +7,8 @@ import { LoginPage } from "./pages/p_login";
 import { GetQuotePage } from './pages/p_getquote.tsx';
 import { createTheme, MantineColorsTuple, MantineProvider } from '@mantine/core';
 import COLORS from './shared/theme.ts';
+import { NoPage404Page } from './pages/p_404_nopage.tsx';
+import { PageLayout } from './components/pagelayout.tsx';
 
 const myColor: MantineColorsTuple = [
     '#ebf5ff',
@@ -51,10 +53,13 @@ export default function App() {
             <MantineProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/about" element={<AboutPage />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/getquote" element={<GetQuotePage />} />
+                        <Route path="/" element={<PageLayout />}>
+                            <Route index element={<HomePage />} />
+                            <Route path="/about" element={<AboutPage />} />
+                            <Route path="/login" element={<LoginPage />} />
+                            <Route path="/getquote" element={<GetQuotePage />} />
+                            <Route path="*" element={<NoPage404Page />} />
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </MantineProvider>

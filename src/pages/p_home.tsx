@@ -1,4 +1,3 @@
-import { PageLayout } from "../components/pagelayout";
 import { SizedBox } from "../components/basics";
 import { Container, Flex } from "@mantine/core";
 import { GetYourQuoteButtonLarge } from "../components/canonical/canonical";
@@ -75,9 +74,9 @@ const Mini = () => (<Flex direction="column" align="center">
 </Flex>);
 
 export function HomePage() {
-
+    document.title = strings.pages.home.title;
     return (
-        <PageLayout title={strings.pages.home.title} native={true}>
+        <>
             <DisplayAtLeastMd>
                 <Flex
                     direction="row"
@@ -97,6 +96,6 @@ export function HomePage() {
             <DisplayUntilMd>
                 <Mini />
             </DisplayUntilMd>
-        </PageLayout >
+        </>
     );
 }
