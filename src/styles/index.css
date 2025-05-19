@@ -1,14 +1,26 @@
-@import url("./theme.css");
+@import url(theme.css);
+@import "tailwindcss";
+
+@theme {
+    --color-primary-color: var(--primary);
+    --color-on-primary-color: var(--on-primary);
+    --color-primary-darker-color: var(--primary-darker);
+    --color-secondary-color: var(--secondary);
+    --color-secondary-darker-color: var(--secondary-darker);
+    --color-on-secondary-color: var(--on-secondary);
+    --color-tertiary-color: var(--tertiary);
+    --color-on-tertiary-color: var(--on-tertiary);
+    --color-surface-color: var(--surface);
+    --color-surface-variant-color: var(--surface-variant);
+    --color-success-color: var(--success);
+    --size-border-radius: var(--border-radius);
+}
 
 html,
 body {
     scroll-behavior: smooth;
     padding: 0;
-    margin: 0;
     background: var(--surface);
-    font-family: "Monsterrat";
-    font-size: 18px;
-    line-height: 1.5;
     user-select: none;
 }
 

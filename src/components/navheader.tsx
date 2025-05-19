@@ -1,36 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { SizedBox } from "./basics";
-import "../styles/theme.css";
-import { Button, Divider, Drawer, Flex } from "antd";
-import { Link } from "react-router-dom";
-import { Header } from "antd/es/layout/layout";
 import COLORS from "../shared/theme.ts";
-import strings from "../assets/strings.json";
-import {
-    CloseOutlined,
-    HomeOutlined,
-    MenuOutlined,
-    PhoneOutlined,
-    QuestionOutlined,
-    UserOutlined,
-} from "@ant-design/icons";
-import { isMd } from "../shared/responsive_queries.ts";
+import { Flex, Button, Drawer, Group, Menu, Center } from '@mantine/core';
+import Icon from '@mdi/react';
+import { mdiAccountOutline, mdiChevronDown, mdiClose, mdiHelp, mdiHomeVariantOutline, mdiMenu } from '@mdi/js';
 import { DisplayAtLeastMd, DisplayUntilMd } from "./responsive";
+import styled from 'styled-components';
+import { useDisclosure } from '@mantine/hooks';
 
-function NavLink({ label, to, fontSize = "1.2em" }) {
-    return (
-        <a
-            href={to}
-            style={{
-                color: COLORS.onPrimary,
-                fontWeight: "600",
-                fontSize: fontSize,
-            }}
-        >
-            {label}
-        </a>
-    );
-}
+const NavLink = styled.a<{ $fontSize?: string; }>`
+    color: var(--primary);
+    font-weight: 600;
+    font-size: ${props => props.$fontSize ?? "1.2em"}
+`;
 
 function MenuItem({
     icon,
@@ -40,7 +22,7 @@ function MenuItem({
     children: React.ReactNode;
 }>) {
     return (
-        <Flex vertical={false} gap="0.8em" align="center">
+        <Flex direction="row" gap="1.4rem" align="center">
             {icon}
             {children}
         </Flex>
@@ -51,143 +33,149 @@ function MenuItem({
  * For anything until md (screen-size)
  */
 function MiniHeader() {
-    const [open, setOpen] = useState(false);
+    const [opened, { open, close }] = useDisclosure(false);
     return (
-        <>
-            <Flex vertical={false} align="center" justify="center">
+        <div className="bg-primary-color py-[1.2rem] pl-[1.2rem]">
+            <Flex direction="row" align="center" justify="center">
                 <LogoHorizontal />
-                <SizedBox width={"2.2vw"} />
+                <SizedBox $width={"2.2vw"} />
                 <Button
-                    onClick={() => setOpen(true)}
-                    style={{
-                        backgroundColor: COLORS.primary,
-                        color: COLORS.onPrimary,
-                        border: "none",
-                    }}
+                    onClick={open}
+                    color="var(--primary)"
                 >
-                    <MenuOutlined
-                        style={{
-                            fontSize: "180%", // optical size?
-                        }}
-                    />
+                    <Icon path={mdiMenu} size={1.8} color={COLORS.onPrimary} />
                 </Button>
-            </Flex>
+            </Flex >
             <Drawer
-                placement="bottom"
-                closable={true}
-                onClose={() => setOpen(false)}
-                open={open}
-                closeIcon={
-                    <CloseOutlined
-                        style={{
-                            fontSize: "130%",
-                            color: COLORS.onPrimary,
-                        }}
-                    />
-                }
-                style={{
-                    backgroundColor: COLORS.primary,
-                    color: COLORS.onPrimary,
+                position="bottom"
+                onClose={close}
+                opened={opened}
+                closeButtonProps={{
+                    iconSize: "1.6em",
+                    icon: <Icon path={mdiClose} className="text-on-primary-color" />
                 }}
             >
-                <Flex vertical={true} gap="large" justify="center">
-                    <MenuItem
-                        icon={
-                            <HomeOutlined
-                                style={{
-                                    fontSize: "1.4em",
-                                }}
-                            />
-                        }
-                    >
-                        <NavLink to="/" label="Home" fontSize="1.4em" />
-                    </MenuItem>
-                    <MenuItem
-                        icon={
-                            <QuestionOutlined
-                                style={{
-                                    fontSize: "1.4em",
-                                }}
-                            />
-                        }
-                    >
-                        <NavLink to="/about" label="About" fontSize="1.4em" />
-                    </MenuItem>
-                    <MenuItem
-                        icon={
-                            <UserOutlined
-                                style={{
-                                    fontSize: "1.4em",
-                                }}
-                            />
-                        }
-                    >
-                        <NavLink to="/login" label="Login" fontSize="1.4em" />
-                    </MenuItem>
-                </Flex>
+                <Drawer.Body className="bg-primary-color pt-[0.4em]">
+                    <Flex direction="column" gap="2rem" justify="center">
+                        <MenuItem
+                            icon={<Icon path={mdiHomeVariantOutline} size={1.4} color={COLORS.onPrimary} />}
+                        >
+                            <NavLink href="/" $fontSize="1.4em">Home</NavLink>
+                        </MenuItem>
+                        <MenuItem
+                            icon={<Icon path={mdiHelp} size={1.4} color={COLORS.onPrimary} />}
+                        >
+                            <NavLink href="/about" $fontSize="1.4em">About</NavLink>
+                        </MenuItem>
+                        <MenuItem
+                            icon={<Icon path={mdiAccountOutline} size={1.4} color={COLORS.onPrimary} />}
+                        >
+                            <NavLink href="/login" $fontSize="1.4em">Login</NavLink>
+                        </MenuItem>
+                    </Flex>
+                </Drawer.Body>
             </Drawer>
-        </>
+        </div>
     );
 }
 
 export function LogoHorizontal() {
-    return <Link
-        to="/"
-        style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center" // makes sure the buttons and the image header are on the same axis line
-        }}
-    >
+    return <a href="/">
         <img
             itemProp="image"
-            src={"/logo_horizontal.png"}
+            src="/logo_horizontal.png"
             alt="United Aline" />
-    </Link>;
+    </a>;
 }
 
+const bigMenuLinks: ReadonlyArray<{ to: string, label: string, links: ReadonlyArray<{ to: string, label: React.ReactNode; }>; }> = [
+    {
+        to: "/about",
+        label: "About",
+        links: []
+    },
+    {
+        to: "/login",
+        label: "Login",
+        links: []
+    }
+];
+
 export function NavHeader() {
+    const items = bigMenuLinks.map((link) => {
+        const menuItems = link.links.map((sublink) => (
+            <Menu.Item key={sublink.to}>{sublink.label}</Menu.Item>
+        ));
+        if (menuItems.length > 0) {
+            return (
+                <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+                    <Menu.Target>
+                        <a
+                            href={link.to}
+                            className={`
+                                block
+                                leading-1
+                                px-3
+                                py-2
+                                rounded-sm
+                                no-underline
+                                text-[1.2em]
+                                font-medium
+                            `}
+                        >
+                            <Center>
+                                <span className="mr-5px text-on-primary-color">
+                                    {link.label}
+                                </span>
+                                <Icon path={mdiChevronDown} size={1.2} color={COLORS.onPrimary} />
+                            </Center>
+                        </a>
+                    </Menu.Target>
+                    <Menu.Dropdown>
+                        {menuItems}
+                    </Menu.Dropdown>
+                </Menu>
+            );
+        }
+        return (<a
+            key={link.label}
+            href={link.to}
+            className={`
+                block
+                leading-1
+                px-3
+                py-2
+                rounded-sm
+                no-underline
+                text-[1.2em]
+                font-medium
+                text-on-primary-color
+            `}>{link.label}</a>);
+    });
     return (
-        <Header
-            style={{
-                backgroundColor: COLORS.primary,
-                color: "white",
-                height: "56px",
-                paddingTop: "1rem",
-                paddingBottom: "1rem",
-                paddingLeft: isMd() ? "12rem" : "1.2rem",
-                paddingRight: isMd() ? "12rem" : "1.2rem",
-            }}
-        >
+        <header>
             <DisplayAtLeastMd>
-                <Flex justify="space-between" align="center">
-                    <LogoHorizontal />
-                    <SizedBox width="20%" />
-                    <Flex gap="middle" flex="1">
-                        <Flex align="center">
-                            <PhoneOutlined style={{ paddingRight: "0.15em" }} />
-                            <a
-                                href={`tel: ${strings.canonical.telephoneNumber}`}
-                                style={{
-                                    color: COLORS.onPrimary,
-                                    fontWeight: "600",
-                                    fontSize: "1.2em",
-                                }}
-                            >
-                                {strings.canonical.telephoneNumber}
-                            </a>
-                        </Flex>
-                        <Divider type="vertical" />
-                        <Flex gap="1.5rem">
-                            <NavLink to="/about" label="About" />
-                            <NavLink to="/login" label="Login" />
-                        </Flex>
-                    </Flex>
-                </Flex>
+                <div className={`
+                    bg-primary-color
+                    py-[2rem]
+                    px-[12rem]
+                `}>
+                    <div className={`
+                            h-[56px]
+                            flex
+                            justify-between
+                            items-center
+                        `}>
+                        <LogoHorizontal />
+                        <Group gap={5} visibleFrom="sm">
+                            {items}
+                        </Group>
+                    </div>
+                </div>
             </DisplayAtLeastMd>
             <DisplayUntilMd>
                 <MiniHeader />
             </DisplayUntilMd>
-        </Header>
+        </header >
     );
 }

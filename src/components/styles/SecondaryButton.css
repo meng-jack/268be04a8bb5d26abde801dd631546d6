@@ -1,6 +1,6 @@
-@import url("../../styles/theme.css");
+@import url("../../styles/index.css");
 
-.secondary-button.ant-btn-primary {
+.secondary-button {
     color: var(--on-secondary);
     background-color: var(--secondary);
     border-width: 1px;
@@ -9,13 +9,13 @@
     box-shadow: none;
 }
 
-.secondary-button.ant-btn-primary:hover,
-.secondary-button.ant-btn-primary:focus {
+.secondary-button:hover,
+.secondary-button:focus {
     color: var(--on-primary);
     background-color: var(--primary);
     border-color: none;
 }
 
-.secondary-button.ant-btn-primary:active {
+.secondary-button:active {
     border-color: none;
 }

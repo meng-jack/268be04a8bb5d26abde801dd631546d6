@@ -1,49 +1,31 @@
-import React from "react";
+import styled from 'styled-components';
 
-const SizedBox = ({ width = "0px", height = "0px" }) => (
-    <div style={{ width: width, height: height }}></div>
-);
+export const SizedBox = styled.div<{ $width?: number | string, $height?: number | string; }>`
+    width: ${props => props.$width ?? 0};
+    height: ${props => props.$height ?? 0};
+`;
+  
+export const DocHeader1 = styled.h1`
+    font-size: 3rem;
+    font-family: "Monsterrat";
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+`;
 
-const DocHeader1 = ({ children }: { children: React.ReactNode }) => (
-    <h1
-        style={{
-            fontSize: "3rem",
-            fontFamily: "Monsterrat",
-            marginBottom: "2.5rem",
-            lineHeight: "1.2",
-            fontWeight: "600",
-        }}
-    >
-        {children}
-    </h1>
-);
+export const DocHeader2 = styled.h2`
+    font-size: 2.6rem;
+    font-family: "Monsterrat";
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+`;
 
-const DocHeader2 = ({ children }: { children: React.ReactNode }) => (
-    <h2
-        style={{
-            fontSize: "2.6rem",
-            fontFamily: "Monsterrat",
-            marginBottom: "2rem",
-            marginTop: "2rem",
-            fontWeight: "500",
-        }}
-    >
-        {children}
-    </h2>
-);
+export const DocHeader3 = styled.h3`
+    font-size: 2.4rem;
+    font-family: "Monsterrat";
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+`;
 
-const DocHeader3 = ({ children }: { children: React.ReactNode }) => (
-    <h3
-        style={{
-            fontSize: "2.4rem",
-            fontFamily: "Monsterrat",
-            marginBottom: "2rem",
-            marginTop: "2rem",
-            fontWeight: "500",
-        }}
-    >
-        {children}
-    </h3>
-);
-
-export { SizedBox, DocHeader1, DocHeader2, DocHeader3 };

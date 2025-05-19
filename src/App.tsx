@@ -3,39 +3,61 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import { HomePage } from "./pages/p_home";
 import { AboutPage } from "./pages/p_about";
-import { ConfigProvider } from "antd";
-
 import { LoginPage } from "./pages/p_login";
 import { GetQuotePage } from './pages/p_getquote.tsx';
+import { createTheme, MantineColorsTuple, MantineProvider } from '@mantine/core';
 import COLORS from './shared/theme.ts';
+
+const myColor: MantineColorsTuple = [
+    '#ebf5ff',
+    '#d4e7fa',
+    '#a4cef7',
+    '#72b4f6',
+    '#4e9df5',
+    '#3b8ff5',
+    '#3188f6',
+    '#2675dc',
+    '#1b68c5',
+    '#003d76'
+];
+
+const theme = createTheme({
+    fontFamily: "Monsterrat",
+    colors: {
+        myColor,
+    },
+    components: {
+        Drawer: {
+            styles: {
+                header: {
+                    backgroundColor: COLORS.primary,
+                    marginBottom: "0.4em",
+                    borderBottom: "1px solid var(--primary-darker)"
+                },
+                body: {
+                    backgroundColor: COLORS.primary
+                },
+                content: {
+                    backgroundColor: COLORS.primary
+                },
+            }
+        }
+    }
+});
 
 export default function App() {
     return (
-        <ConfigProvider
-            // antd provides a great visual editor here:
-            //
-            // https://ant.design/theme-editor
-            theme={{
-                token: {
-                    colorPrimary: COLORS.primary,
-                    colorInfo: COLORS.primary,
-                    colorSuccess: "#6eb74a",
-                    colorWarning: "#d7a133",
-                    colorError: "#ca4346",
-                    fontSize: 18,
-                    wireframe: false,
-                    colorPrimaryBg: "#bcd2e2" // :D really good color choice
-                },
-            }}
-        >
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/getquote" element={<GetQuotePage />} />
-                </Routes>
-            </BrowserRouter>
-        </ConfigProvider>
+        <React.StrictMode>
+            <MantineProvider theme={theme}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/getquote" element={<GetQuotePage />} />
+                    </Routes>
+                </BrowserRouter>
+            </MantineProvider>
+        </React.StrictMode>
     );
 }

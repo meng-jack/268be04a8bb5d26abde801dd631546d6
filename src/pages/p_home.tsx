@@ -1,36 +1,48 @@
-import React from "react";
 import { PageLayout } from "../components/pagelayout";
 import { SizedBox } from "../components/basics";
-import { Flex } from "antd";
-import COLORS from "../shared/theme.ts";
+import { Container, Flex } from "@mantine/core";
 import { GetYourQuoteButtonLarge } from "../components/canonical/canonical";
 import { DisplayAtLeastMd, DisplayUntilMd } from "../components/responsive";
 import strings from "../assets/strings.json";
-import { AnimatedText } from '../components/animated/text_sequencer';
+import React, { useEffect, useState } from 'react';
+import TextTransition, { presets } from 'react-text-transition';
+import { isMd } from '../shared/responsive_queries';
 
 // extracting a lot of code here which i believe to be the correct way to do it in react and not just
 // for semantics (borrowed flutter + compose refactoring)
 
+const RollerStrings = () => {
+    const [rollerIndex, setRollerIndex] = useState(0);
+    useEffect(() => {
+        const id = setInterval(
+            () => setRollerIndex((index) => index + 1),
+            5000,
+        );
+        return () => clearTimeout(id);
+    }, []);
+
+    return <div className="h-auto max-h-auto">
+        <TextTransition
+            className={isMd() ? "" : "text-center px-[2.4rem]"}
+            springConfig={presets.stiff}
+            translateValue="75%">
+            <span className="inline-block h-auto max-h-auto">
+                {strings.pages.home.rollerStrings.default[rollerIndex % strings.pages.home.rollerStrings.default.length]}
+            </span>
+        </TextTransition></div>;
+};
+
 const LeftSide = () => (
     <div id="home-left-bind" style={{ width: "80%" }}>
         <div
-            style={{
-                fontSize: "1.8em",
-                color: COLORS.primary,
-                textAlign: "left",
-                fontWeight: "bold",
-            }}
+            className="text-[1.8em] text-primary-color text-left font-bold"
         >
             An International Insurance Brokerage Firm
         </div>
-        <SizedBox height="0.4em" />
-        <AnimatedText texts={strings.pages.home.rollerStrings.default} />
-        <SizedBox height="6.8rem" />
-        <GetYourQuoteButtonLarge
-            height="2.2em"
-            fontSize="1.2em"
-        />
-
+        <SizedBox $height="0.4em" />
+        <RollerStrings />
+        <SizedBox $height="6.8rem" />
+        <GetYourQuoteButtonLarge />
     </div>
 );
 
@@ -41,69 +53,49 @@ const LeftSide = () => (
 const RightSide = () => (
     <Flex
         id="home-right-bind"
-        vertical={true}
+        direction="column"
         justify="center"
         align="center"
-        style={{
-            width: "100%",
-            height: "100%",
-
-        }}
     >
         <p>
         </p>
     </Flex>
 );
 
+const Mini = () => (<Flex direction="column" align="center">
+    <div
+        className="pt-[2.8em] text-[1.8em] text-primary-color text-center font-bold px-[2.5rem]"
+    >
+        An International Insurance Brokerage Firm
+    </div>
+    <Container className="pt-[1.8rem] pb-[2rem]">
+        <RollerStrings />
+    </Container>
+    <GetYourQuoteButtonLarge />
+</Flex>);
+
 export function HomePage() {
+
     return (
         <PageLayout title={strings.pages.home.title} native={true}>
             <DisplayAtLeastMd>
                 <Flex
-                    vertical={false}
+                    direction="row"
                     justify="space-betweem"
                     align="center"
-                    style={{
-                        paddingLeft: '12rem',
-                        paddingRight: "0rem",
-                        paddingTop: "3.4rem",
-                    }}
+                    className="pl-[12rem] pt-[3.4rem] pr-0"
                 >
-                    <div style={{ flex: 2 }}>
+                    <div className="flex-2">
                         <LeftSide />
                     </div>
-                    <SizedBox width="1.2rem" />
-                    <div style={{ flex: 1, width: "40%", height: "20rem" }}>
+                    <SizedBox $width="1.2rem" />
+                    <div className="w-[40%] h-[20rem]">
                         <RightSide />
                     </div >
                 </Flex>
             </DisplayAtLeastMd>
             <DisplayUntilMd>
-                <Flex vertical={true} align="center">
-                    <div
-                        style={{
-                            paddingTop: "2.8em",
-                            fontSize: "1.62em",
-                            color: COLORS.primary,
-                            textAlign: "center",
-                            fontWeight: "bold",
-                            paddingLeft: "2.5rem",
-                            paddingRight: "2.5rem"
-                        }}
-                    >
-                        An International Insurance Brokerage Firm
-                    </div>
-                    <SizedBox height="0.86rem" />
-                    <div
-                        style={{
-                            textAlign: "center",
-                        }}
-                    >
-                        <AnimatedText texts={strings.pages.home.rollerStrings.medium} />
-                    </div>
-                    <SizedBox height="2.2em" />
-                    <GetYourQuoteButtonLarge />
-                </Flex>
+                <Mini />
             </DisplayUntilMd>
         </PageLayout >
     );

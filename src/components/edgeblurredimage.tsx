@@ -18,34 +18,23 @@ export default function EdgeBlurredImage({
     blurRadius = '34px',
 }: Readonly<EdgeBlurredImageProps>) {
     return (
-        <div style={{
-            position: 'relative',
-            width: width,
-            height: height
-        }}>
-            <img style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                width: '100%',
-                overflow: "hidden",
-                height: '100%',
-                objectFit: 'cover',
-                zIndex: '2'
-            }} src={imageUrl} alt={altText} />
-            <img style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                width: edge,
-                opacity: "0.65",
-                height: '100%',
-                filter: `blur(${blurRadius}) translate(-50%)`,
-                zIndex: '1',
-                transform: 'scaleX(1) translateX(-20)',
-                objectFit: 'cover',
-                objectPosition: 'left',
-            }} alt={altText} src={imageUrl} />
+        <div className={`relative w-[${width}] h-[${height}]`}>
+            <img className="absolute top-0 left-0 w-full h-full overflow-hidden object-cover z-20" src={imageUrl} alt={altText} />
+            <img className={`
+                absolute
+                top-0
+                left-0
+                w-[${edge}]
+                opacity-65
+                h-full
+                blur-[${blurRadius}]
+                -translate-x-1/2
+                z-10
+                scale-x-1
+                translate-x-[-20px]
+                object-cover
+                object-left
+            `} alt={altText} src={imageUrl} />
         </div>
     );
 };
