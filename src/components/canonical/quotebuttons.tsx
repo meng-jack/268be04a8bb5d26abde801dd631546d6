@@ -11,7 +11,7 @@ const GetYourQuoteButtonLarge = () => {
     return <Button
         onClick={() => {
             Logging.fine("User request GET_QUOTE_AX");
-            navigate("/getquote");
+            navigate("/public/getquote");
         }}
         styles={{
             root: {

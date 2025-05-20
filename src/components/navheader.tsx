@@ -60,12 +60,12 @@ function MiniHeader() {
                         <MenuItem
                             icon={<Icon path={mdiHomeVariantOutline} size={1.4} color={COLORS.onPrimary} />}
                         >
-                            <NavLink href="/" $fontSize="1.4em">Home</NavLink>
+                            <NavLink href="/public/" $fontSize="1.4em">Home</NavLink>
                         </MenuItem>
                         <MenuItem
                             icon={<Icon path={mdiHelp} size={1.4} color={COLORS.onPrimary} />}
                         >
-                            <NavLink href="/about" $fontSize="1.4em">About</NavLink>
+                            <NavLink href="/public/about" $fontSize="1.4em">About</NavLink>
                         </MenuItem>
                         <MenuItem
                             icon={<Icon path={mdiAccountOutline} size={1.4} color={COLORS.onPrimary} />}
@@ -90,7 +90,7 @@ export function LogoHorizontal() {
 
 const bigMenuLinks: ReadonlyArray<{ to: string, label: string, links: ReadonlyArray<{ to: string, label: React.ReactNode; }>; }> = [
     {
-        to: "/about",
+        to: "/public/about",
         label: "About",
         links: []
     },

@@ -9,6 +9,8 @@ import { createTheme, MantineColorsTuple, MantineProvider } from '@mantine/core'
 import COLORS from './shared/theme.ts';
 import { NoPage404Page } from './pages/p_404_nopage.tsx';
 import { PageLayout } from './components/pagelayout.tsx';
+import * as Admin from "./admin/components/pagelayout.tsx";
+import AdminDashboard from './admin/pages/p_dashboard.tsx';
 
 const myColor: MantineColorsTuple = [
     '#ebf5ff',
@@ -53,12 +55,15 @@ export default function App() {
             <MantineProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<PageLayout />}>
+                        <Route path="/public" element={<PageLayout />}>
                             <Route index element={<HomePage />} />
-                            <Route path="/about" element={<AboutPage />} />
-                            <Route path="/login" element={<LoginPage />} />
-                            <Route path="/getquote" element={<GetQuotePage />} />
+                            <Route path="about" element={<AboutPage />} />
+                            <Route path="getquote" element={<GetQuotePage />} />
                             <Route path="*" element={<NoPage404Page />} />
+                        </Route>
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/demo/admin" element={<Admin.PageLayout />}>
+                            <Route path="dashboard" element={<AdminDashboard />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>
