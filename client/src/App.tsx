@@ -55,11 +55,11 @@ export default function App() {
             <MantineProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/public" element={<PageLayout />}>
+                        <Route path="*" element={<NoPage404Page />} />
+                        <Route path="/" element={<PageLayout />}>
                             <Route index element={<HomePage />} />
                             <Route path="about" element={<AboutPage />} />
                             <Route path="getquote" element={<GetQuotePage />} />
-                            <Route path="*" element={<NoPage404Page />} />
                         </Route>
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/demo/admin" element={<Admin.PageLayout />}>

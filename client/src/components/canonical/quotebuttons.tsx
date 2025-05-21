@@ -12,7 +12,7 @@ const GetYourQuoteButtonLarge = () => {
         color="var(--secondary)"
         onClick={() => {
             Logging.fine("User request GET_QUOTE_AX");
-            navigate("/public/getquote");
+            navigate("/getquote");
         }}
     >
         <span className="text-on-secondary-color text-lg px-2.5 py-2.5">

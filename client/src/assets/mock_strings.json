@@ -1,0 +1,18 @@
+{
+    "langKey": "en-US",
+    "user": {
+        "firstName": "Jane",
+        "lastName": "Wang",
+        "email": "jane@email.com",
+        "phonenumber": "+1 000-000-0000",
+        "location": {
+            "addressLine": "123 Winston St",
+            "city": "Great Neck",
+            "zip": "11021",
+            "state": "New York",
+            "stateAbbr": "NY",
+            "country": "United States",
+            "countryAbbr": "US"
+        }
+    }
+}

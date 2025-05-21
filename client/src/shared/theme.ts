@@ -16,4 +16,8 @@ const COLORS = {
     success: "#689F38"
 };
 
+export const GEOMETRY = {
+    borderRadius: "6px"
+};
+
 export default COLORS;

@@ -1,5 +1,5 @@
 :root {
-    --on-primary: #e0e0e0;
+    --on-primary: #fcfcfc;
     --primary: #003d76;
     --primary-darker: #00264a;
     --secondary: #fed700;
@@ -9,6 +9,6 @@
     --on-tertiary: #cccccc;
     --surface: #ffffff;
     --surface-variant: #c2c2c2;
-    --success: #689F38;
-    --border-radius: 8px;
+    --success: #689f38;
+    --border-radius: 6px;
 }

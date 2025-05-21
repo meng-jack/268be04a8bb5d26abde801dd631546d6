@@ -2,14 +2,19 @@ const express = require("express");
 const app = express();
 const https = require("https");
 const fs = require("fs");
+const sequelize = require("sequelize");
+const dotenv = require("dotenv").config();
 const path = require("path");
+const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 6500;
 
-const morgan = require("morgan");
-app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.send({ message: "Hello World!" });
+    res.send({ message: "Hello World!", token: "hello_world" });
 });
 
 const options = {

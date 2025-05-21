@@ -1,6 +1,7 @@
 {
     "scripts": {
+        "full": "npm run client && npm run server",
         "client": "cd client && npm run dev",
-        "server": "cd server && nodemon index.js"
+        "server": "cd server && nodemon app.js"
     }
 }

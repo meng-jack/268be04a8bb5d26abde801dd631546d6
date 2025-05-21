@@ -1,10 +1,11 @@
 # TODO
 
--   [ ] Port over the fade in-out animation on the home page from the original Kobweb implementation
+-   [x] Port over the fade in-out animation on the home page from the original Kobweb implementation
 -   [ ] Add the Schema for this website following Schema.org specifications (as well as Google's documentation). The current one is copied over from the original website.
 -   [x] Migrates `shared/strings.tsx` to be a JSON within `assets/strings.json` which will provide better ease of access
--   [ ] Refactor all inline styles currently to use 'CSS-in-JS' as well as just normal CSS files in order to avoid potential overhead.
--   [ ] Refactor all potential repetitive styles to use Styled-Components
+-   [x] Refactor all inline styles currently to use 'CSS-in-JS' as well as just normal CSS files in order to avoid potential overhead.
+-   [x] Refactor all potential repetitive styles to use Styled-Components
+-   [x] Add proper side bar support for the admin-dashboard (the sidebar dashboard for mobile should use a floating button to open the main full size side bar as either a full overlay drawer or a side drawer. On desktop, the sidebar can be hidden to just icons or expanded.)
 
 ## Backlog
 

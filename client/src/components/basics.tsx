@@ -4,7 +4,11 @@ export const SizedBox = styled.div<{ $width?: number | string, $height?: number 
     width: ${props => props.$width ?? 0};
     height: ${props => props.$height ?? 0};
 `;
-  
+
+export const Spacer = styled.div`
+    flex: 999999;
+`;
+
 export const DocHeader1 = styled.h1`
     font-size: 3rem;
     font-family: "Monsterrat";
