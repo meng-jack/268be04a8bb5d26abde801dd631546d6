@@ -61,8 +61,8 @@ const AdminNavSideLinks: ReadonlyArray<NavSideLink> = [
     }
 ];
 
-function FullSideNav({ initiallyClosed }: Readonly<{ initiallyClosed: boolean; }>) {
-    const [opened, { open, close }] = useDisclosure(initiallyClosed);
+function FullSideNav() {
+    const [opened, { open, close }] = useDisclosure(isMd());
     const [selected, setSelected] = useState("dashboard_nav");
     const [forced, setForced] = useState(false);
     const { width } = useWindowDimensions();
@@ -190,7 +190,7 @@ function FullSideNav({ initiallyClosed }: Readonly<{ initiallyClosed: boolean; }
             </Tooltip>
         </div>
     </nav >) : (
-        <nav className="bg-primary-color p-2 w-20 h-[100vh] text-on-primary-color">
+        <nav className="bg-primary-color p-4 w-16 h-[100vh] text-on-primary-color">
             <Stack className="h-[100%]" align="center">
                 <ScrollArea>
                     <Stack className="self-stretch h-[100%]" align="center">
@@ -301,7 +301,7 @@ function FullSideNav({ initiallyClosed }: Readonly<{ initiallyClosed: boolean; }
 export function PageLayout() {
     return (
         <>
-            <FullSideNav initiallyClosed={isMd()} />
+            <FullSideNav />
             <Outlet />
         </>
     );
