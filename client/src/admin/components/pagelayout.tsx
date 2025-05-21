@@ -1,67 +1,21 @@
 import React, { useState } from "react";
 import { Button, Divider, Group, ScrollArea, Stack, Tooltip } from "@mantine/core";
 import Icon from '@mdi/react';
-import { mdiAccountCircle, mdiAccountMultiple, mdiArrowCollapseLeft, mdiArrowExpandRight, mdiFileEdit, mdiHandshake, mdiHome, mdiLogout, mdiScript, mdiSecurity } from '@mdi/js';
+import { mdiAccountCircle, mdiArrowCollapseLeft, mdiArrowExpandRight, mdiLogout } from '@mdi/js';
 import { Spacer } from '../../components/basics';
 import manifest from "../shared/manifest.json";
 import mock from "../../assets/mock_strings.json";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { isMd, isLg } from "../../shared/responsive_queries.ts";
 import { useDisclosure } from '@mantine/hooks';
 import useWindowDimensions from '../../hooks/windim.tsx';
-
-interface NavSideLink {
-    id: string;
-    labelIcon: string;
-    label: string;
-}
-
-// represents general agent access (shown to registered agents)
-const NavSideLinks: ReadonlyArray<NavSideLink> = [
-    {
-        id: "dashboard_nav",
-        labelIcon: mdiHome,
-        label: "Dashboard"
-    },
-    {
-        id: "quotes_nav",
-        labelIcon: mdiFileEdit,
-        label: "Quotes"
-    },
-    {
-        id: "customer_nav",
-        labelIcon: mdiAccountMultiple,
-        label: "Customers"
-    },
-    {
-        id: "policies_nav",
-        labelIcon: mdiScript,
-        label: "Policies"
-    },
-    {
-        id: "companies_nav",
-        labelIcon: mdiHandshake,
-        label: "Partners & Companies"
-    },
-
-];
-
-// represents admin access (shown to admins)
-// shown under normal nav side links and have a different icon color
-const AdminNavSideLinks: ReadonlyArray<NavSideLink> = [
-    {
-        id: "admin_agents_nav",
-        labelIcon: mdiSecurity,
-        label: "Agents"
-    },
-    {
-        id: "admin_sysconfig_nav",
-        labelIcon: mdiSecurity,
-        label: "System Configuration"
-    }
-];
+import { AdminPageBundles } from '../shared/bundles.tsx';
 
 function FullSideNav() {
+    const navigate = useNavigate();
+    function pushBranchLink(link: AdminPageBundles.NavSideLink) {
+        navigate(link.singleRef!);
+    }
     const [opened, { open, close }] = useDisclosure(isMd());
     const [selected, setSelected] = useState("dashboard_nav");
     const [forced, setForced] = useState(false);
@@ -106,12 +60,13 @@ function FullSideNav() {
                 </Stack>
                 <Divider color="var(--primary-darker)" />
                 <Stack gap="0.6em">
-                    {NavSideLinks.map((element) => {
+                    {AdminPageBundles.BranchLinks.map((element) => {
                         return (
                             <button
                                 key={element.id}
                                 onClick={() => {
                                     setSelected(element.id);
+                                    pushBranchLink(element);
                                 }}
                                 className={selected === element.id
                                     ? `
@@ -137,12 +92,13 @@ function FullSideNav() {
                         );
                     })}
                     <Divider color="var(--primary-darker)" />
-                    {AdminNavSideLinks.map((element) => {
+                    {AdminPageBundles.AdminNavSideLinks.map((element) => {
                         return (
                             <button
                                 key={element.id}
                                 onClick={() => {
                                     setSelected(element.id);
+                                    pushBranchLink(element);
                                 }}
                                 className={selected === element.id
                                     ? `
@@ -209,12 +165,13 @@ function FullSideNav() {
                             // the shifting of the padding from py-4 to py-2 depending on which is selected
                             // gives a really material 3 design look which doesn't really match with the
                         }
-                        {NavSideLinks.map((element) => {
+                        {AdminPageBundles.BranchLinks.map((element) => {
                             return (
                                 <Tooltip key={element.id} label={element.label}>
                                     <button
                                         onClick={() => {
                                             setSelected(element.id);
+                                            pushBranchLink(element);
                                         }}
                                         className={selected === element.id
                                             ? `
@@ -242,12 +199,13 @@ function FullSideNav() {
                             );
                         })}
                         <Divider color="var(--primary-darker)" />
-                        {AdminNavSideLinks.map((element) => {
+                        {AdminPageBundles.AdminNavSideLinks.map((element) => {
                             return (
                                 <Tooltip key={element.id} label={element.label}>
                                     <button
                                         onClick={() => {
                                             setSelected(element.id);
+                                            pushBranchLink(element);
                                         }}
                                         className={selected === element.id
                                             ? `
@@ -300,9 +258,9 @@ function FullSideNav() {
 // similar to the public page layout
 export function PageLayout() {
     return (
-        <>
+        <Group gap="0">
             <FullSideNav />
             <Outlet />
-        </>
+        </Group>
     );
 }

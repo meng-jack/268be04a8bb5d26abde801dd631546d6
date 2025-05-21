@@ -10,7 +10,7 @@ import COLORS from './shared/theme.ts';
 import { NoPage404Page } from './pages/p_404_nopage.tsx';
 import { PageLayout } from './components/pagelayout.tsx';
 import * as Admin from "./admin/components/pagelayout.tsx";
-import AdminDashboard from './admin/pages/p_dashboard.tsx';
+import { AdminPageBundles } from './admin/shared/bundles.tsx';
 
 const myColor: MantineColorsTuple = [
     '#ebf5ff',
@@ -55,15 +55,24 @@ export default function App() {
             <MantineProvider theme={theme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="*" element={<NoPage404Page />} />
                         <Route path="/" element={<PageLayout />}>
                             <Route index element={<HomePage />} />
+                            <Route path="*" element={<NoPage404Page />} />
                             <Route path="about" element={<AboutPage />} />
                             <Route path="getquote" element={<GetQuotePage />} />
                         </Route>
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/demo/admin" element={<Admin.PageLayout />}>
-                            <Route path="dashboard" element={<AdminDashboard />} />
+                            {
+                                (AdminPageBundles.BranchLinks).map((element) => {
+                                    return <Route key={element.singleRef} path={element.singleRef} element={element.child} />;
+                                })
+                            }
+                            {
+                                (AdminPageBundles.AdminNavSideLinks).map((element) => {
+                                    return <Route key={element.singleRef} path={element.singleRef} element={element.child} />;
+                                })
+                            }
                         </Route>
                     </Routes>
                 </BrowserRouter>
