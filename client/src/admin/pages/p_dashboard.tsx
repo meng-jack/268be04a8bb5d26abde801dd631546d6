@@ -1,17 +1,13 @@
-import { ScrollArea, Stack } from '@mantine/core';
-import Icon from '@mdi/react';
+import { Stack } from '@mantine/core';
 import React from 'react';
 
-
-
 export default function DashboardPage() {
+    document.title = "Dashboard | United Aline";
     return (
-        <ScrollArea>
-            <Stack justify="flex-start" className="overflow-auto">
-                <span>
-                    Dashboard
-                </span>
-            </Stack>
-        </ScrollArea>
+        <Stack justify="flex-start">
+            <span>
+                Dashboard
+            </span>
+        </Stack>
     );
 }

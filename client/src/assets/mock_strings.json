@@ -14,5 +14,119 @@
             "country": "United States",
             "countryAbbr": "US"
         }
-    }
+    },
+    "agents": [
+        {
+            "firstName": "Jane",
+            "lastName": "Wang",
+            "email": "jane@email.com",
+            "role": "Management",
+            "status": "Active"
+        },
+        {
+            "firstName": "Annie",
+            "lastName": "Li",
+            "email": "anni@email.net",
+            "role": "Management",
+            "status": "Inactive"
+        },
+        {
+            "firstName": "Liam",
+            "lastName": "Zhang",
+            "email": "liam.zhang@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Olivia",
+            "lastName": "Chen",
+            "email": "olivia.chen@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Noah",
+            "lastName": "Wang",
+            "email": "noah.wang@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Emma",
+            "lastName": "Li",
+            "email": "emma.li@example.com",
+            "role": "Support",
+            "status": "Pending Activation"
+        },
+        {
+            "firstName": "Sophia",
+            "lastName": "Liu",
+            "email": "sophia.liu@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Ava",
+            "lastName": "Zhao",
+            "email": "ava.zhao@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Lucas",
+            "lastName": "Wu",
+            "email": "lucas.wu@example.com",
+            "role": "IT Admin",
+            "status": "Active"
+        },
+        {
+            "firstName": "Mia",
+            "lastName": "Sun",
+            "email": "mia.sun@example.com",
+            "role": "Support",
+            "status": "Active"
+        },
+        {
+            "firstName": "Ethan",
+            "lastName": "Zhou",
+            "email": "ethan.zhou@example.com",
+            "role": "Agent",
+            "status": "Inactive"
+        },
+        {
+            "firstName": "Isabella",
+            "lastName": "Gao",
+            "email": "isabella.gao@example.com",
+            "role": "IT Admin",
+            "status": "Active"
+        },
+        {
+            "firstName": "Wei",
+            "lastName": "Brown",
+            "email": "wei.brown@example.com",
+            "role": "Agent",
+            "status": "Active"
+        },
+        {
+            "firstName": "Xiao",
+            "lastName": "Jones",
+            "email": "xiao.jones@example.com",
+            "role": "Support",
+            "status": "Active"
+        },
+        {
+            "firstName": "Harper",
+            "lastName": "Yang",
+            "email": "harper.yang@example.com",
+            "role": "Support",
+            "status": "Pending Activation"
+        },
+        {
+            "firstName": "James",
+            "lastName": "Huang",
+            "email": "james.huang@example.com",
+            "role": "Agent",
+            "status": "Active"
+        }
+    ]
 }

@@ -159,7 +159,12 @@
         }
     },
     "canonical": {
-        "telephoneNumber": "1-888-345-1868"
+        "telephoneNumber": "1-888-345-1868",
+        "greetings": {
+            "morning": "Good Morning",
+            "afternoon": "Good Afternoon",
+            "evening": "Good Evening"
+        }
     },
     "components": {
         "getyourquotebutton": {

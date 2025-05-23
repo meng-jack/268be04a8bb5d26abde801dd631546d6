@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import { HomePage } from "./pages/p_home";
 import { AboutPage } from "./pages/p_about";
-import { LoginPage } from "./pages/p_login";
+import { SecureLoginPasswordRequest, SecureLoginPage, SecureTunnelLayout } from "./pages/p_login";
 import { GetQuotePage } from './pages/p_getquote.tsx';
 import { createTheme, MantineColorsTuple, MantineProvider } from '@mantine/core';
 import COLORS from './shared/theme.ts';
@@ -61,7 +61,12 @@ export default function App() {
                             <Route path="about" element={<AboutPage />} />
                             <Route path="getquote" element={<GetQuotePage />} />
                         </Route>
-                        <Route path="/login" element={<LoginPage />} />
+
+                        <Route path="/login" element={<SecureTunnelLayout />} >
+                            <Route index element={<SecureLoginPage />} />
+                            <Route path="requestpwd" element={<SecureLoginPasswordRequest />} />
+                        </Route>
+
                         <Route path="/demo/admin" element={<Admin.PageLayout />}>
                             {
                                 (AdminPageBundles.BranchLinks).map((element) => {
