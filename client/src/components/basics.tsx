@@ -5,8 +5,8 @@ export const SizedBox = styled.div<{ $width?: number | string, $height?: number 
     height: ${props => props.$height ?? 0};
 `;
 
-export const Spacer = styled.div`
-    flex: 999999;
+export const Spacer = styled.div <{ $flex?: number; }> `
+    flex: ${props => props.$flex ?? 99999};
 `;
 
 export const DocHeader1 = styled.h1`

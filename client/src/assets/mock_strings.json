@@ -21,112 +21,549 @@
             "lastName": "Wang",
             "email": "jane@email.com",
             "role": "Management",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1527195318000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Annie",
             "lastName": "Li",
-            "email": "anni@email.net",
+            "email": "anni@email.com",
             "role": "Management",
-            "status": "Inactive"
+            "status": "Inactive",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Liam",
             "lastName": "Zhang",
-            "email": "liam.zhang@example.com",
+            "email": "liam.zhang@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Olivia",
             "lastName": "Chen",
-            "email": "olivia.chen@example.com",
+            "email": "olivia.chen@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "lastActivity": 1747842076000,
+            "registeredTimestamp": 1550696118000
         },
         {
             "firstName": "Noah",
             "lastName": "Wang",
-            "email": "noah.wang@example.com",
+            "email": "noah.wang@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Emma",
             "lastName": "Li",
-            "email": "emma.li@example.com",
+            "email": "emma.li@email.com",
             "role": "Support",
-            "status": "Pending Activation"
+            "status": "Pending Activation",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Sophia",
             "lastName": "Liu",
-            "email": "sophia.liu@example.com",
+            "email": "sophia.liu@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Ava",
             "lastName": "Zhao",
-            "email": "ava.zhao@example.com",
+            "email": "ava.zhao@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Lucas",
             "lastName": "Wu",
-            "email": "lucas.wu@example.com",
+            "email": "lucas.wu@email.com",
             "role": "IT Admin",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Mia",
             "lastName": "Sun",
-            "email": "mia.sun@example.com",
+            "email": "mia.sun@email.com",
             "role": "Support",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Ethan",
             "lastName": "Zhou",
-            "email": "ethan.zhou@example.com",
+            "email": "ethan.zhou@email.com",
             "role": "Agent",
-            "status": "Inactive"
+            "status": "Inactive",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Isabella",
             "lastName": "Gao",
-            "email": "isabella.gao@example.com",
+            "email": "isabella.gao@email.com",
             "role": "IT Admin",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Wei",
             "lastName": "Brown",
-            "email": "wei.brown@example.com",
+            "email": "wei.brown@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Xiao",
             "lastName": "Jones",
-            "email": "xiao.jones@example.com",
+            "email": "xiao.jones@email.com",
             "role": "Support",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "Harper",
             "lastName": "Yang",
-            "email": "harper.yang@example.com",
+            "email": "harper.yang@email.com",
             "role": "Support",
-            "status": "Pending Activation"
+            "status": "Pending Activation",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
         },
         {
             "firstName": "James",
             "lastName": "Huang",
-            "email": "james.huang@example.com",
+            "email": "james.huang@email.com",
             "role": "Agent",
-            "status": "Active"
+            "status": "Active",
+            "registeredTimestamp": 1550696118000,
+            "lastActivity": 1747842076000
+        },
+        {
+            "firstName": "Emily",
+            "lastName": "Tang",
+            "email": "emily.tang@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1546300000000,
+            "lastActivity": 1747821015000
+        },
+        {
+            "firstName": "Nathan",
+            "lastName": "Guo",
+            "email": "nathan.guo@email.com",
+            "role": "Agent",
+            "status": "Inactive",
+            "registeredTimestamp": 1539840000000,
+            "lastActivity": 1747831100000
+        },
+        {
+            "firstName": "Chloe",
+            "lastName": "Deng",
+            "email": "chloe.deng@email.com",
+            "role": "IT Admin",
+            "status": "Active",
+            "registeredTimestamp": 1567210000000,
+            "lastActivity": 1747835000000
+        },
+        {
+            "firstName": "Leo",
+            "lastName": "Ma",
+            "email": "leo.ma@email.com",
+            "role": "Agent",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1554020000000,
+            "lastActivity": 1747842000000
+        },
+        {
+            "firstName": "Grace",
+            "lastName": "Xu",
+            "email": "grace.xu@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1571000000000,
+            "lastActivity": 1747840000000
+        },
+        {
+            "firstName": "Henry",
+            "lastName": "Qin",
+            "email": "henry.qin@email.com",
+            "role": "Management",
+            "status": "Active",
+            "registeredTimestamp": 1512000000000,
+            "lastActivity": 1747839000000
+        },
+        {
+            "firstName": "Zoe",
+            "lastName": "Pan",
+            "email": "zoe.pan@email.com",
+            "role": "Support",
+            "status": "Inactive",
+            "registeredTimestamp": 1533000000000,
+            "lastActivity": 1747825000000
+        },
+        {
+            "firstName": "Ryan",
+            "lastName": "He",
+            "email": "ryan.he@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1520000000000,
+            "lastActivity": 1747837000000
+        },
+        {
+            "firstName": "Lily",
+            "lastName": "Fang",
+            "email": "lily.fang@email.com",
+            "role": "IT Admin",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1545500000000,
+            "lastActivity": 1747830000000
+        },
+        {
+            "firstName": "Jason",
+            "lastName": "Yu",
+            "email": "jason.yu@email.com",
+            "role": "Management",
+            "status": "Active",
+            "registeredTimestamp": 1532000000000,
+            "lastActivity": 1747841900000
+        },
+        {
+            "firstName": "Lihua",
+            "lastName": "Zhang",
+            "email": "zhang.lihua@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1525300000000,
+            "lastActivity": 1747831234000
+        },
+        {
+            "firstName": "Jianguo",
+            "lastName": "Li",
+            "email": "li.jianguo@email.com",
+            "role": "Agent",
+            "status": "Inactive",
+            "registeredTimestamp": 1540000000000,
+            "lastActivity": 1747829988000
+        },
+        {
+            "firstName": "Xiuying",
+            "lastName": "Wang",
+            "email": "wang.xiuying@email.com",
+            "role": "IT Admin",
+            "status": "Active",
+            "registeredTimestamp": 1534500000000,
+            "lastActivity": 1747835566000
+        },
+        {
+            "firstName": "Weiqiang",
+            "lastName": "Zhao",
+            "email": "zhao.weiqiang@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1519900000000,
+            "lastActivity": 1747840123000
+        },
+        {
+            "firstName": "Meiling",
+            "lastName": "Liu",
+            "email": "liu.meiling@email.com",
+            "role": "Support",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1561100000000,
+            "lastActivity": 1747834400000
+        },
+        {
+            "firstName": "Guoqiang",
+            "lastName": "Sun",
+            "email": "sun.guoqiang@email.com",
+            "role": "Management",
+            "status": "Active",
+            "registeredTimestamp": 1539200000000,
+            "lastActivity": 1747839999000
+        },
+        {
+            "firstName": "Guilan",
+            "lastName": "Zhou",
+            "email": "zhou.guilan@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1547200000000,
+            "lastActivity": 1747831888000
+        },
+        {
+            "firstName": "Jinlong",
+            "lastName": "Wu",
+            "email": "wu.jinlong@email.com",
+            "role": "IT Admin",
+            "status": "Inactive",
+            "registeredTimestamp": 1528800000000,
+            "lastActivity": 1747825566000
+        },
+        {
+            "firstName": "Yuzhen",
+            "lastName": "Xu",
+            "email": "xu.yuzhen@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1553300000000,
+            "lastActivity": 1747838765000
+        },
+        {
+            "firstName": "Xiaolong",
+            "lastName": "Gao",
+            "email": "gao.xiaolong@email.com",
+            "role": "Management",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1539900000000,
+            "lastActivity": 1747836677000
+        },
+        {
+            "firstName": "Manching",
+            "lastName": "Tsui",
+            "email": "tsui.manching@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1534123123000,
+            "lastActivity": 1747842011000
+        },
+        {
+            "firstName": "Kawei",
+            "lastName": "Tse",
+            "email": "tse.kawei@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1547299988000,
+            "lastActivity": 1747842034000
+        },
+        {
+            "firstName": "Wingyee",
+            "lastName": "Chow",
+            "email": "chow.wingyee@email.com",
+            "role": "IT Admin",
+            "status": "Inactive",
+            "registeredTimestamp": 1528891119000,
+            "lastActivity": 1747831222000
+        },
+        {
+            "firstName": "Taklam",
+            "lastName": "Cheung",
+            "email": "cheung.taklam@email.com",
+            "role": "Support",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1559900000000,
+            "lastActivity": 1747841777000
+        },
+        {
+            "firstName": "Siuwah",
+            "lastName": "Leung",
+            "email": "leung.siuwah@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1541201200000,
+            "lastActivity": 1747841100000
+        },
+        {
+            "firstName": "Meiwan",
+            "lastName": "Kwok",
+            "email": "kwok.meiwan@email.com",
+            "role": "IT Admin",
+            "status": "Active",
+            "registeredTimestamp": 1536677888000,
+            "lastActivity": 1747841999000
+        },
+        {
+            "firstName": "Chingyi",
+            "lastName": "Lau",
+            "email": "lau.chingyi@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1555511111000,
+            "lastActivity": 1747841888000
+        },
+        {
+            "firstName": "Hiuyee",
+            "lastName": "Yuen",
+            "email": "yuen.hiuyee@email.com",
+            "role": "Agent",
+            "status": "Inactive",
+            "registeredTimestamp": 1544444444000,
+            "lastActivity": 1747839444000
+        },
+        {
+            "firstName": "Tszlok",
+            "lastName": "Ho",
+            "email": "ho.tszlok@email.com",
+            "role": "Management",
+            "status": "Active",
+            "registeredTimestamp": 1533332222000,
+            "lastActivity": 1747840042000
+        },
+        {
+            "firstName": "Kahei",
+            "lastName": "Ng",
+            "email": "ng.kahei@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1551234567000,
+            "lastActivity": 1747841777000
+        },
+        {
+            "firstName": "Kahei",
+            "lastName": "Tsui",
+            "email": "tsui.kahei@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1541123123000,
+            "lastActivity": 1747842999000
+        },
+        {
+            "firstName": "Zhiming",
+            "lastName": "Wang",
+            "email": "wang.zhiming@email.com",
+            "role": "Management",
+            "status": "Inactive",
+            "registeredTimestamp": 1523000000000,
+            "lastActivity": 1747841999000
+        },
+        {
+            "firstName": "Yuenling",
+            "lastName": "Cheung",
+            "email": "cheung.yuenling@email.com",
+            "role": "IT Admin",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1557788123000,
+            "lastActivity": 1747841234000
+        },
+        {
+            "firstName": "Tszlok",
+            "lastName": "Lai",
+            "email": "lai.tszlok@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1539999999000,
+            "lastActivity": 1747842766000
+        },
+        {
+            "firstName": "Meiling",
+            "lastName": "Yip",
+            "email": "yip.meiling@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1543456000000,
+            "lastActivity": 1747840123000
+        },
+        {
+            "firstName": "Jiayi",
+            "lastName": "Zhao",
+            "email": "zhao.jiayi@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1553456123123,
+            "lastActivity": 1747842555000
+        },
+        {
+            "firstName": "Siuwah",
+            "lastName": "Tam",
+            "email": "tam.siuwah@email.com",
+            "role": "Support",
+            "status": "Inactive",
+            "registeredTimestamp": 1531343412000,
+            "lastActivity": 1747839999000
+        },
+        {
+            "firstName": "Lihua",
+            "lastName": "Zhang",
+            "email": "zhang.lihua@email.com",
+            "role": "Agent",
+            "status": "Active",
+            "registeredTimestamp": 1514444444000,
+            "lastActivity": 1747840120000
+        },
+        {
+            "firstName": "Tingfung",
+            "lastName": "Chiu",
+            "email": "chiu.tingfung@email.com",
+            "role": "IT Admin",
+            "status": "Active",
+            "registeredTimestamp": 1549988777000,
+            "lastActivity": 1747842900000
+        },
+        {
+            "firstName": "Xiaomei",
+            "lastName": "Liu",
+            "email": "liu.xiaomei@email.com",
+            "role": "Support",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1532210000000,
+            "lastActivity": 1747841770000
+        },
+        {
+            "firstName": "Kawei",
+            "lastName": "Mak",
+            "email": "mak.kawei@email.com",
+            "role": "Management",
+            "status": "Active",
+            "registeredTimestamp": 1529921123123,
+            "lastActivity": 1747842678000
+        },
+        {
+            "firstName": "Jiahui",
+            "lastName": "Sun",
+            "email": "sun.jiahui@email.com",
+            "role": "Agent",
+            "status": "Inactive",
+            "registeredTimestamp": 1550010022000,
+            "lastActivity": 1747841444000
+        },
+        {
+            "firstName": "Tszching",
+            "lastName": "Shum",
+            "email": "shum.tszching@email.com",
+            "role": "IT Admin",
+            "status": "Active",
+            "registeredTimestamp": 1545566777000,
+            "lastActivity": 1747842110000
+        },
+        {
+            "firstName": "Chunmei",
+            "lastName": "Gao",
+            "email": "gao.chunmei@email.com",
+            "role": "Support",
+            "status": "Active",
+            "registeredTimestamp": 1550023333000,
+            "lastActivity": 1747842763000
+        },
+        {
+            "firstName": "Manho",
+            "lastName": "To",
+            "email": "to.manho@email.com",
+            "role": "Agent",
+            "status": "Pending Activation",
+            "registeredTimestamp": 1548822233000,
+            "lastActivity": 1747842999000
         }
     ]
 }

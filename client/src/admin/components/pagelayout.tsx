@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Button, Divider, Group, ScrollArea, Stack, Tooltip } from "@mantine/core";
 import Icon from '@mdi/react';
 import { mdiAccountCircle, mdiArrowCollapseLeft, mdiArrowExpandRight, mdiLogout } from '@mdi/js';
@@ -11,6 +11,7 @@ import { useDisclosure } from '@mantine/hooks';
 import useWindowDimensions from '../../hooks/windim.tsx';
 import { AdminPageBundles } from '../shared/bundles.tsx';
 import { Logging } from "../../shared/logger.ts";
+import AsyncContentLoader from '../../components/asynccontentloader.tsx';
 function FullSideNav() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,15 +29,36 @@ function FullSideNav() {
     const isActiveLink = (linkPath: string) => {
         const locSplit = location.pathname.split("/");
         const last = locSplit[locSplit.length - 1];
-        Logging.info("DASH Selection Check " + location.pathname + "(" + last + ") === " + linkPath);
+        Logging.finer("DASH Selection Check " + location.pathname + "(" + last + ") === " + linkPath);
         return last === linkPath;
     };
+    const loadTitleImage = useMemo(() => {
+        return async () => {
+            return Promise.resolve('/logo_horizontal.png');
+        };
+    }, []);
     return opened ? (
         <nav className="bg-primary-color p-4 md:w-70 h-[100vh] text-on-primary-color flex flex-col">
             <ScrollArea>
                 <Stack className="self-stretch h-[100%]">
                     <header>
-                        <img src="/logo_horizontal.png" className="h-[100%]" alt="United Aline" />
+                        <AsyncContentLoader
+                            asyncOperation={loadTitleImage}
+                            minHeight="1.5em"
+                            loaderProps={{
+                                color: "var(--on-primary)",
+                                type: "dots",
+                                size: "1.5em",
+                            }}
+                        >
+                            {(imageUrl: string) => (
+                                <img
+                                    src={imageUrl}
+                                    alt="United Aline"
+                                    style={{ maxHeight: '300px' }}
+                                />
+                            )}
+                        </AsyncContentLoader>
                     </header>
                     <Group className="text-[0.8em] bg-primary-darker-color p-1.5 rounded-(--border-radius)">
                         <span className="font-semibold">
@@ -48,7 +70,8 @@ function FullSideNav() {
                     <Stack className="text-[0.8em] bg-primary-darker-color p-1.5 rounded-(--border-radius)" gap="0">
                         <Group className="p-0 m-0" align="center" justify="flex-start">
                             <Icon path={mdiAccountCircle} size={1.6} />
-                            <Stack justify="center" align="flex-start" gap="0">
+                            <Stack justify="center" align="flex-start" gap="0.2em">
+
                                 <span className="font-semibold text-[1.2em]">
                                     {mock.user.firstName}{" "}{mock.user.lastName}
                                 </span>
@@ -277,10 +300,14 @@ export function PageLayout() {
     // as mantine displays everything on the cross-axis at the center-line
     return (
         <Group gap="0" align="flex-start" className="h-screen w-screen" wrap="nowrap">
-            <FullSideNav />
-            <div className="p-4 flex-grow h-full overflow-hidden">
-                <ScrollArea className="h-full">
-                    <Outlet />
+            <div className="shrink-0">
+                <FullSideNav />
+            </div>
+            <div className="flex-grow h-full overflow-hidden">
+                <ScrollArea className="h-full" offsetScrollbars>
+                    <div className="p-4 min-h-full">
+                        <Outlet />
+                    </div>
                 </ScrollArea>
             </div>
         </Group>

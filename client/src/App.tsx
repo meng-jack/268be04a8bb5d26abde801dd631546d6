@@ -44,9 +44,11 @@ const theme = createTheme({
                 content: {
                     backgroundColor: COLORS.primary
                 },
+
             }
-        }
-    }
+        },
+    },
+
 });
 
 export default function App() {

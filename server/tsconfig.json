@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "nodenext",
+        "experimentalDecorators": true,
+        "moduleResolution": "nodenext",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
+    }
+}

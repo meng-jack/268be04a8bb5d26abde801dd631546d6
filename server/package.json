@@ -1,12 +1,16 @@
 {
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.ts"
   },
   "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.46",
+    "@sequelize/postgres": "^7.0.0-alpha.46",
     "bcrypt": "^6.0.0",
+    "colors": "^1.4.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "graphql": "^16.11.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "pg": "^8.16.0",
@@ -14,6 +18,12 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "@types/pg": "^8.15.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

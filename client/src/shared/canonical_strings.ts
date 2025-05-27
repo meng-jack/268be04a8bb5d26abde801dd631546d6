@@ -9,4 +9,14 @@ export namespace ComputedStrings {
         }
         return canonical.greetings.evening;
     }
+
+    export function getTimeAgoString(time: Date): string {
+        const timePast = Math.trunc((+new Date() - +time) / 8.64e+7);
+        if (timePast === 0) {
+            return canonical.timeago.today;
+        } else if (timePast === 1) {
+            return canonical.timeago.yesterday;
+        }
+        return `${timePast} ${canonical.timeago.ago}`;
+    }
 }
