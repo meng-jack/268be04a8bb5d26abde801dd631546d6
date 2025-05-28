@@ -1,13 +1,38 @@
-import { Button, Divider, Group, Menu, Modal, Paper, Select, Stack, Table, TextInput, LoadingOverlay, Loader, Pagination } from '@mantine/core';
-import React, { useState, useEffect } from 'react';
+import {
+    Button,
+    Divider,
+    Group,
+    Menu,
+    Modal,
+    Paper,
+    Select,
+    Stack,
+    Table,
+    TextInput,
+    LoadingOverlay,
+    Loader,
+    Pagination,
+} from "@mantine/core";
+import React, { useState, useEffect } from "react";
 import mock from "../../assets/mock_strings.json";
-import { Tags } from '../components/tag';
-import { mdiAccountPlus, mdiAt, mdiChevronDown, mdiChevronUp, mdiCommaBox, mdiExport, mdiFileExcelBox, mdiFilePdfBox, mdiMagnify } from '@mdi/js';
-import Icon from '@mdi/react';
-import { Spacer } from '../../components/basics';
-import { useDisclosure } from '@mantine/hooks';
-import { Logging } from '../../shared/logger';
-import { ComputedStrings } from '../../shared/canonical_strings';
+import { Tags } from "../components/tag";
+import {
+    mdiAccountPlus,
+    mdiAt,
+    mdiChevronDown,
+    mdiChevronUp,
+    mdiCommaBox,
+    mdiExport,
+    mdiFileExcelBox,
+    mdiFilePdfBox,
+    mdiMagnify,
+} from "@mdi/js";
+import Icon from "@mdi/react";
+import { Spacer } from "../../components/basics";
+import { useDisclosure } from "@mantine/hooks";
+import { Logging } from "../../shared/logger";
+import { ComputedStrings } from "../../shared/canonical_strings";
+
 
 interface Agent {
     firstName: string;

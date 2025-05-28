@@ -71,9 +71,23 @@ export default function App() {
 
                         <Route path="/demo/admin" element={<Admin.PageLayout />}>
                             {
-                                (AdminPageBundles.BranchLinks).map((element) => {
-                                    return <Route key={element.singleRef} path={element.singleRef} element={element.child} />;
-                                })
+                                AdminPageBundles.BranchLinks.concat(AdminPageBundles.TopLinks).map((element) =>
+                                    "singleRef" in element ? (
+                                        <Route
+                                            key={element.singleRef}
+                                            path={element.singleRef}
+                                            element={element.child}
+                                        />
+                                    ) : (
+                                        element.links.map((subelement) => (
+                                            <Route
+                                                key={subelement.singleRef}
+                                                path={subelement.singleRef}
+                                                element={subelement.child}
+                                            />
+                                        ))
+                                    )
+                                )
                             }
                             {
                                 (AdminPageBundles.AdminNavSideLinks).map((element) => {

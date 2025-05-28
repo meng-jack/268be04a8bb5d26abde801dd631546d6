@@ -13,8 +13,291 @@
             "stateAbbr": "NY",
             "country": "United States",
             "countryAbbr": "US"
-        }
+        },
+        "isAdmin": true
     },
+    "alerts": [
+        {
+            "level": "info",
+            "title": "New Carrier Partnership!",
+            "content": "We're excited to announce our new partnership with Acme Insurance Co.! This brings you expanded product offerings in commercial property and casualty insurance. Training materials are now available in the \"Resources\" section.",
+            "timestamp": 1748227200,
+            "category": "Partnerships"
+        },
+        {
+            "level": "warn",
+            "title": "System Maintenance Alert",
+            "content": "Our dashboard will undergo scheduled maintenance on June 1, 2025 from 10:00 PM EST to 2:00 AM EST. We apologize for any inconvenience. Please plan your work accordingly.",
+            "timestamp": 1748659200,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "warn",
+            "title": "Mandatory Software Patch Deployment: CRM",
+            "content": "A critical security patch for the CRM system will be deployed on June 3, 2025, 22:00 EDT. All agents must ensure the CRM application is closed prior to this time. Non-compliance may result in data synchronization issues.",
+            "timestamp": 1717468800,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "info",
+            "title": "Revision of Professional Conduct Policy",
+            "content": "The firm's Professional Conduct Policy has undergone revision. All personnel are required to review the updated document, accessible via the HR Portal, by June 20, 2025. Acknowledgment of review is mandatory.",
+            "timestamp": 1718697600,
+            "category": "HR-Policy"
+        },
+        {
+            "level": "info",
+            "title": "Updated Loss Control Guidelines for Commercial Property",
+            "content": "New loss control guidelines for Commercial Property policies are now effective. Agents are directed to utilize these revised parameters for risk assessment and client consultation. Refer to Document ID #PRP-007.",
+            "timestamp": 1717065600,
+            "category": "Underwriting"
+        },
+        {
+            "level": "warn",
+            "title": "Upcoming Internal Audit Readiness - Q3 Focus",
+            "content": "An internal audit focusing on Q3 transactional compliance and documentation standards will commence July 8, 2025. Personnel are advised to ensure all client files are in strict adherence to regulatory protocols.",
+            "timestamp": 1720447200,
+            "category": "Compliance"
+        },
+        {
+            "level": "info",
+            "title": "Implementation of Standardized Client Onboarding Forms",
+            "content": "Effective June 10, 2025, all client onboarding processes must utilize the newly standardized digital forms. Non-standardized submissions will result in processing delays.",
+            "timestamp": 1718078400,
+            "category": "Operations"
+        },
+        {
+            "level": "info",
+            "title": "Performance Metric Adjustment: Q3 Conversion Rates",
+            "content": "Adjustments to Q3 target conversion rates have been finalized. Detailed departmental and individual metrics are now accessible via the Performance Dashboard. Attainment of these targets is critical.",
+            "timestamp": 1719662400,
+            "category": "Performance"
+        },
+        {
+            "level": "warn",
+            "title": "Expense Reporting Policy Enforcement Reminder",
+            "content": "Strict enforcement of the revised expense reporting policy (Policy #FIN-003) is now in effect. Submissions lacking proper documentation or adherence to guidelines will be rejected without exception.",
+            "timestamp": 1717065600,
+            "category": "Finance"
+        },
+        {
+            "level": "info",
+            "title": "System Enhancement: Policy Inquiry Module",
+            "content": "The Policy Inquiry Module has received an enhancement enabling faster data retrieval. No user action is required; system performance should be incrementally improved.",
+            "timestamp": 1716979200,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "info",
+            "title": "Revised Corporate Travel Policy Issued",
+            "content": "The Corporate Travel Policy has been updated to reflect current budgetary and logistical parameters. All future travel arrangements must conform to Policy #HR-002, effective immediately.",
+            "timestamp": 1716979200,
+            "category": "HR-Policy"
+        },
+        {
+            "level": "warn",
+            "title": "Regulatory Compliance Deadline: New GDPR Mandate",
+            "content": "A new GDPR mandate requires updated consent procedures for specific client data. All affected agents must complete the 'Data Consent Module' by June 28, 2025. Failure to comply poses significant risk.",
+            "timestamp": 1719576000,
+            "category": "Compliance"
+        },
+        {
+            "level": "warn",
+            "title": "Compliance Reminder",
+            "content": "Just a friendly reminder to review the updated HIPAA Privacy Guidelines. All agents must complete the mandatory compliance module by June 15, 2025. Find it under \"Training.\"",
+            "timestamp": 1749955200,
+            "category": "Compliance"
+        },
+        {
+            "level": "info",
+            "title": "Q2 Sales Leaderboard",
+            "content": "Congratulations to Sarah Jenkins for leading the Q2 sales! Keep up the great work, everyone. Let's aim for even higher in Q3!",
+            "timestamp": 1747622400,
+            "category": "Performance"
+        },
+        {
+            "level": "info",
+            "title": "New Product Launch: CyberSecure",
+            "content": "Get ready for our new CyberSecure Business Policy! This innovative offering provides comprehensive protection against digital threats and data breaches. Marketing materials and training sessions are coming soon.",
+            "timestamp": 1747449600,
+            "category": "Products"
+        },
+        {
+            "level": "info",
+            "title": "Referral Program Boost!",
+            "content": "For the month of June, earn an extra 15% bonus for every successful client referral. See details in \"Incentives\" section of your profile.",
+            "timestamp": 1747190400,
+            "category": "Sales"
+        },
+        {
+            "level": "info",
+            "title": "Did You Know?",
+            "content": "You can now easily generate quotes directly from the client profile! This new feature saves you time and streamlines your workflow. Check out the quick tutorial video in \"Help.\"",
+            "timestamp": 1746758400,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "info",
+            "title": "Webinar Series: Cyber Liability",
+            "content": "Join us for our next webinar on \"Understanding Cyber Liability for Small Businesses\" on June 5, 2025 at 2:00 PM EST. Register under \"Events.\"",
+            "timestamp": 1749004800,
+            "category": "Training"
+        },
+        {
+            "level": "info",
+            "title": "Client Communication Template",
+            "content": "We've added a new template for \"New Policy Welcome Email\" to help streamline your client onboarding process. Access it in the \"Templates\" section of your dashboard.",
+            "timestamp": 1746499200,
+            "category": "Operations"
+        },
+        {
+            "level": "info",
+            "title": "New Onboarding Workflow for Commercial Lines",
+            "content": "A revised, streamlined onboarding workflow for new Commercial Lines clients has been published in the Process Library. Please review for immediate implementation.",
+            "timestamp": 1716979200,
+            "category": "Operations"
+        },
+        {
+            "level": "warn",
+            "title": "Mandatory Anti-Money Laundering (AML) Retraining",
+            "content": "All agents and support staff must complete the annual AML retraining module by June 30, 2025. Access the course via the 'Compliance' portal.",
+            "timestamp": 1717670400,
+            "category": "Compliance"
+        },
+        {
+            "level": "info",
+            "title": "New Features in Client Relationship Manager (CRM)",
+            "content": "The CRM has been updated with new features including a client communication log and task automation for follow-ups. A quick guide is available in the 'CRM Help' section.",
+            "timestamp": 1717065600,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "warn",
+            "title": "Data Privacy Training Mandatory for All Staff",
+            "content": "A new mandatory data privacy and security training module has been assigned to all employees. Please complete it by June 15, 2025, to ensure compliance with new regulations.",
+            "timestamp": 1717843200,
+            "category": "Training"
+        },
+        {
+            "level": "info",
+            "title": "Updated Property & Casualty Policy Forms (Q3 2025)",
+            "content": "Revised P&C policy forms for Q3 2025 are now live in the document library. Ensure you are using the latest versions for all new applications starting July 1st.",
+            "timestamp": 1719747200,
+            "category": "Underwriting"
+        },
+        {
+            "level": "info",
+            "title": "Upcoming Webinar: Mastering LinkedIn for Lead Generation",
+            "content": "Boost your prospecting! Register for our 'Mastering LinkedIn for Lead Generation' webinar on June 25, 2025, at 2:00 PM EDT. Learn strategies to find and connect with prospects.",
+            "timestamp": 1719288000,
+            "category": "Sales-Training"
+        },
+        {
+            "level": "warn",
+            "title": "Reminder: Expense Report Submission Deadline",
+            "content": "Just a reminder that all May expense reports must be submitted by Friday, May 31, 2025, end of day. Please ensure all receipts are attached.",
+            "timestamp": 1717152000,
+            "category": "Finance"
+        },
+        {
+            "level": "info",
+            "title": "Company Picnic Save the Date: August 10th!",
+            "content": "Mark your calendars! Our annual company picnic will be held on Saturday, August 10, 2025. More details on location and activities will follow soon.",
+            "timestamp": 1723228800,
+            "category": "HR-Events"
+        },
+        {
+            "level": "info",
+            "title": "New Tool: Automated Policy Review Checklist",
+            "content": "A new automated checklist tool is available in the 'Agent Tools' section to help ensure all essential components are covered before policy submission. Highly recommended for complex cases.",
+            "timestamp": 1717065600,
+            "category": "Operations"
+        },
+        {
+            "level": "info",
+            "title": "Success Story: Large Group Health Win",
+            "content": "Congratulations to Sarah Chen and her team for successfully securing the XYZ Corp. group health account! This is a fantastic win and a testament to great teamwork.",
+            "timestamp": 1716979200,
+            "category": "Sales"
+        },
+        {
+            "level": "warn",
+            "title": "Office Closure Reminder: Independence Day",
+            "content": "Our offices will be closed on Thursday, July 4, 2025, in observance of Independence Day. Regular business hours resume on Friday, July 5th.",
+            "timestamp": 1720092000,
+            "category": "HR-Events"
+        },
+        {
+            "level": "info",
+            "title": "Updates to Homeowners Policy Underwriting Guidelines",
+            "content": "Effective June 1st, minor adjustments to homeowners policy underwriting guidelines have been made regarding roof age and claims history. Details are in the 'Underwriting Handbook' section.",
+            "timestamp": 1717152000,
+            "category": "Underwriting"
+        },
+        {
+            "level": "warn",
+            "title": "Urgent: Phishing Scam Alert - Be Vigilant!",
+            "content": "We've identified a new phishing attempt targeting brokerage emails. Do NOT click suspicious links or open attachments from unknown senders. Report any suspicious emails to IT immediately.",
+            "timestamp": 1717065600,
+            "category": "Security"
+        },
+        {
+            "level": "info",
+            "title": "Brokerage Book Club: June Selection Announced",
+            "content": "Our next Book Club selection is 'The Psychology of Selling'. Join us for discussion sessions every Wednesday in June, starting June 5th. Sign up in the 'Culture & Events' section.",
+            "timestamp": 1717238400,
+            "category": "HR-Events"
+        },
+        {
+            "level": "info",
+            "title": "New FAQ Section: Navigating Complex Claims",
+            "content": "A comprehensive FAQ section has been added to assist with complex claims scenarios across all lines of business. Find it under 'Agent Resources'.",
+            "timestamp": 1716806400,
+            "category": "Operations"
+        },
+        {
+            "level": "info",
+            "title": "IT Tip of the Week: Keyboard Shortcuts",
+            "content": "Boost your productivity! Learn essential keyboard shortcuts for common tasks in our CRM. A quick guide is available in the 'IT Support' area.",
+            "timestamp": 1716979200,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "warn",
+            "title": "Upcoming HR Policy Review Session",
+            "content": "Join HR for an open forum on our updated PTO and remote work policies on June 12th at 11:00 AM EDT. Your feedback is welcome.",
+            "timestamp": 1718164800,
+            "category": "HR-Policy"
+        },
+        {
+            "level": "info",
+            "title": "May's Client Retention Rate Hits New High!",
+            "content": "Fantastic work, team! Our overall client retention rate for May reached an all-time high of 92%. This reflects your exceptional client service.",
+            "timestamp": 1716720000,
+            "category": "Performance"
+        },
+        {
+            "level": "info",
+            "title": "New Training Module: Cross-Selling Life & Health",
+            "content": "A new self-paced training module is available focusing on strategies for cross-selling life and health insurance products to existing P&C clients. Access via 'Training Portal'.",
+            "timestamp": 1716633600,
+            "category": "Training"
+        },
+        {
+            "level": "urgent",
+            "title": "Critical System Outage: CRM Access Impacted",
+            "content": "Our CRM system is currently experiencing an unplanned outage. Our IT team is working to restore services urgently. Updates will be posted here every 30 minutes. Use manual client contact methods where possible.",
+            "timestamp": 1717065600,
+            "category": "IT-Systems"
+        },
+        {
+            "level": "info",
+            "title": "Reminder: All-Hands Meeting Next Tuesday",
+            "content": "Don't forget our quarterly all-hands meeting next Tuesday, June 4th, at 9:00 AM EDT. We'll be discussing Q2 performance and exciting Q3 initiatives. Please attend.",
+            "timestamp": 1717819200,
+            "category": "HR-Events"
+        }
+    ],
     "agents": [
         {
             "firstName": "Jane",

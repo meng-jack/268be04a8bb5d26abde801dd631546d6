@@ -5,7 +5,7 @@
 -   [x] Migrates `shared/strings.tsx` to be a JSON within `assets/strings.json` which will provide better ease of access
 -   [x] Refactor all inline styles currently to use 'CSS-in-JS' as well as just normal CSS files in order to avoid potential overhead.
 -   [x] Refactor all potential repetitive styles to use Styled-Components
--   [ ] Add proper side bar support for the admin-dashboard (the sidebar dashboard for md should use a floating button to open the main full size side bar as either a full overlay drawer or a side drawer. On desktop, the sidebar can be hidden to just icons or expanded. It is important, that the full size sidebar will be reused for mobile and desktop)
+-   [X] Add proper side bar support for the admin-dashboard (the sidebar dashboard for md should use a floating button to open the main full size side bar as either a full overlay drawer or a side drawer. On desktop, the sidebar can be hidden to just icons or expanded. It is important, that the full size sidebar will be reused for mobile and desktop)
 -   [ ] Include more mocks for the following:
     -   [ ] Mocks for the loading screen after clicking in the login screen
 
