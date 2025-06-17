@@ -212,9 +212,9 @@ function FullSideNav() {
                                                 color="var(--on-primary)"
                                             />}>{element.label}</Accordion.Control>
                                         <Accordion.Panel>
-                                            {
-                                                element.links.map((subelement) => (
-                                                    <Stack key={subelement.id} gap="0.4em">
+                                            <Stack gap="0.4em">
+                                                {
+                                                    element.links.map((subelement) => (
                                                         <NavButton
                                                             key={subelement.id}
                                                             link={subelement}
@@ -222,9 +222,9 @@ function FullSideNav() {
                                                             onClick={pushBranchLink}
                                                             isExpanded={opened}
                                                         />
-                                                    </Stack>
-                                                ))
-                                            }
+                                                    ))
+                                                }
+                                            </Stack>
                                         </Accordion.Panel>
                                     </Accordion.Item>
                                 </Accordion>)
